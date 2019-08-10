@@ -1,8 +1,8 @@
 import React from 'react';
-import callApi from '../util/api';
+import callApi from '../../util/api';
 
-import '../commits.css';
-import CommitDetails from './CommitDetails';
+import './commits.css';
+import CommitDetails from '../CommitDetails';
 
 class Commits extends React.PureComponent {
 
@@ -30,7 +30,6 @@ class Commits extends React.PureComponent {
   render () {
     const { repo } = this.props;
     const { commits } = this.state;
-    console.log(commits);
     return (
       <div className="commits-container">
         <ul>

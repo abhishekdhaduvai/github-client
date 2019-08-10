@@ -1,13 +1,13 @@
 import React from 'react';
-import COLORS from '../constants/colors.json';
-import '../card.css';
+import COLORS from '../../constants/colors.json';
+import './card.css';
 
 import FaStar from 'react-icons/lib/fa/star';
 import FaCodeFork from 'react-icons/lib/fa/code-fork';
 import FaExclamationCircle from 'react-icons/lib/fa/exclamation-circle';
 
-import Timestamp from './Timestamp';
-import Commits from './Commits';
+import Timestamp from '../Timestamp';
+import Commits from '../Commits/index.js';
 
 class Card extends React.PureComponent {
 
@@ -31,7 +31,7 @@ class Card extends React.PureComponent {
     const color = repo.language != null ? COLORS[repo.language].color : undefined;
     return (
       <div className="card">
-        <a href={repo.svn_url}><h3 className="title">{repo.name}</h3></a>
+        <a href={repo.svn_url}><h2 className="title">{repo.name}</h2></a>
 
         <div className="desc">
           {repo.description}

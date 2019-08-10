@@ -12,7 +12,7 @@ function CommitDetails ({ owner, name, commit }) {
       <div className="commit-author">
         {<img height={"20"} src={avatar_url} className="avatar" alt="avatar" />}
         <span className="commit-meta">
-          <a href={authorUrl} className="author">{commit.commit.author.name}</a> commited
+          <a href={authorUrl} className="author">{commit.commit.author.name}</a> commited {' '}
           <Timestamp time={commit.commit.author.date} />
         </span>
       </div>
