@@ -1,0 +1,46 @@
+.commits-container {
+  background: white;
+  overflow: scroll;
+  width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #444d56;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.commit {
+  padding: 1em;
+  border: 1px solid #eaecef;
+}
+
+.commit:hover {
+  background: #f6fbff;
+}
+
+.commit-message {
+  font-weight: bold;
+}
+
+.commit-author {
+  font-size: smaller;
+  margin-top: 2px;
+}
+
+.author {
+  font-weight: bold
+}
+
+.commit-meta {
+  position: relative;
+  bottom: 3px;
+  margin-left: 3px;
+}

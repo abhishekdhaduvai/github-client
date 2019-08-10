@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "react-icons": "^2.2.7",
     "react-scripts": "3.0.1"
   },
   "scripts": {
