@@ -85,9 +85,18 @@ class App extends React.PureComponent {
           !fetching && repos.length>0 &&
           <div>
             <div className="owner">
-              <img height={"100"} src={repos[0].owner.avatar_url} className="avatar" alt="avatar" />
-              <h1>{repos[0].owner.login}</h1>
+              <div className="owner-name-logo">
+                <img height={"100"} src={repos[0].owner.avatar_url} className="avatar" alt="avatar" />
+                <h1>{repos[0].owner.login}</h1>
+              </div>
+
+              <div className="repos-card">
+                <div>Repositories</div>
+                <div>{repos.length}</div>
+              </div>
+
             </div>
+
             <h2 className="heading">Popular Repositories</h2>
             <div className="sub-heading">by Forks</div>
             <div className="cards-container">

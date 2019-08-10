@@ -2,7 +2,7 @@ import React from 'react';
 import callApi from '../util/api';
 
 import '../commits.css';
-import Timestamp from './Timestamp';
+import CommitDetails from './CommitDetails';
 
 class Commits extends React.PureComponent {
 
@@ -35,18 +35,7 @@ class Commits extends React.PureComponent {
       <div className="commits-container">
         <ul>
           {commits.map(commit => (
-            <li key={commit.sha} className="commit">
-              <div className="commit-message">
-                <a href={`https://github.com/${repo.owner.login}/${repo.name}/commit/${commit.sha}`}>{commit.commit.message}</a>
-              </div>
-              <div className="commit-author">
-                <img height={"20"} src={commit.author.avatar_url} className="avatar" alt="avatar" />
-                <span className="commit-meta">
-                  <a href={commit.author.url} className="author">{commit.commit.author.name}</a> commited
-                  <Timestamp time={commit.commit.author.date} />
-                </span>
-              </div>
-            </li>
+            <CommitDetails key={commit.sha} owner={repo.owner.login} name={repo.name} commit={commit} />
           ))}
         </ul>
       </div>
