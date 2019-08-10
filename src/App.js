@@ -34,7 +34,7 @@ class App extends React.PureComponent {
       callApi(API, PATH, options)
         .then(json => {
           json.sort((a, b) => {
-            return b.stargazers_count - a.stargazers_count;
+            return b.forks - a.forks;
           })
 
           this.setState({
@@ -89,6 +89,7 @@ class App extends React.PureComponent {
               <h1>{repos[0].owner.login}</h1>
             </div>
             <h2 className="heading">Popular Repositories</h2>
+            <div className="sub-heading">by Forks</div>
             <div className="cards-container">
               {
                 repos.map(repo => (

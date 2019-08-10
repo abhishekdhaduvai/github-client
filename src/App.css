@@ -35,6 +35,12 @@
 .heading {
   text-align: left;
   margin-left: 2em;
+  margin-bottom: 0;
+}
+
+.sub-heading {
+  text-align: left;
+  margin-left: 3em;
 }
 
 .cards-container {

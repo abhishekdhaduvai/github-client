@@ -27,9 +27,8 @@ class Card extends React.PureComponent {
 
   render () {
     const { repo } = this.props;
-    console.log(repo);
     const { showCommits, toggle } = this.state;
-    const color = repo.language != null ? COLORS[repo.language].color : "white";
+    const color = repo.language != null ? COLORS[repo.language].color : undefined;
     return (
       <div className="card">
         <a href={repo.svn_url}><h3 className="title">{repo.name}</h3></a>
@@ -39,10 +38,12 @@ class Card extends React.PureComponent {
         </div>
 
         <div className="stats">
-          <div>
-            <span className="dot" style={{background: color}}></span>
-            <span className="fa-position">{repo.language}</span>
-          </div>
+          {color !== undefined &&
+            <div>
+              <span className="dot" style={{background: color}}></span>
+              <span className="fa-position">{repo.language}</span>
+            </div>
+          }
           <div>
             <FaStar color="gold" className="fa-position" />
             <span>{repo.stargazers_count}</span>
@@ -68,7 +69,6 @@ class Card extends React.PureComponent {
           showCommits &&
           <Commits repo={repo} />
         }
-
       </div>
     );
   }
